@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: CAAD API
+  version: 1.0.0
+  description: API to access remote codebase.
+servers:
+  - url: https://newtest.middlematter.com
+    description: Main Server
+paths:
+  /qpe1was4fsd/code_baseinterface/send_command:
+    post:
+      summary: send command to subprocess.run
+      operationId: sendCommand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commandString:
+                  type: string
+      responses:
+        "200":
+          description: Code updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  updateStatus:
+                    type: string
+        "404":
+          description: Not found
+

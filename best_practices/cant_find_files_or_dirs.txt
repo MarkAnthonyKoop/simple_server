@@ -1,0 +1,5 @@
+whenever you find yourself unable to find a file or directory, before you bother the human (whose time is very valuable) you should first do your due-dilligence and take a look around.   you have access to ls, awk, grep, ack, find, etc., etc.
+
+in general start with an ls or two and then maybe try a find.    you may want to redirect the output of find to a file as sometimes it is large an will overwhelm the interface (and tell you it was too large and error out).   if this happens you can always pipe to head or redirect to file.trash and grep for candidates that way, or include a pipe to grep, or whatever.    the options are virtually limitless and you are very creative--but you need a lot of encouragement--consider this your encouragement.   figure it out!!    trying a few things (maybe up to 10 quick ones per completion) is very inexpensive (on the order of a few cents).   my time, however is worth 1000's of dollars per hour--do you see what I am saying?
+
+ok, now you can proceed to find whatever it is you search--i know you can do it, buddy!!!!

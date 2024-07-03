@@ -1,0 +1,8 @@
+be sure to be sure on the issue before attempting to fix it.   it is critical to think architecturally and deeply about root causes such that the model does not just quickly jump to an easy fix that misses the root cause.   for example, if the issue is a missing key, the tendency might be to first check for the key (which is a good best practice); however, if the key is missing because it should have been initialized or was a typo or something is wrong with the overall architecture, it will not be much harder to find with the quick fix.   all i'm saying here is:   study ALL the related files and think deeply before jumping to conclusions.     it is also good practice to include a summary of the overall architecture in the readme.txt in each directory.    this way you can quickly reference and update the overall strategy and more easily catch architectural issues.
+
+before updating any file, first read the current file (eg readme.txt or .py
+file) and see if it needs enhancements and/or corrections.   if so, go ahead
+and make them, being sure not to leave out any of the "good stuff" that was
+already in there.     for readme.txt files maybe create a section called
+operational flow and/or dataflow (which could include specific references to
+functions and/or data structures) after the initial summary and before the individual file details.     

@@ -1,0 +1,3 @@
+shopt -s expand_aliases
+source /c/z/personal/.bashrc.aliases
+pw send_command.py echo hello

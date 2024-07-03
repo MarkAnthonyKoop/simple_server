@@ -1,0 +1,55 @@
+almost anything can be easily debugged with a "brute force" divide and conquer
+approach.
+
+for example, consider a complex program that is not working as expected.
+take the function that is failing and hack it until it no longer stack dumps
+or fails in the mode it is failing.    then gradually migrate from the failing
+version to the working version and find the trigger that causes the crash.
+
+most problems the model runs into are related to file i/o.   if so, create a
+small testcase that has a similiar file i/o.    you should thoroughly
+understand the environment you are in.   You can even look at the files that
+implement your interface in ~/sandbox/simple_server  (server.py and
+send_command.py are the main ones to help with that understanding)
+
+as another example, consider an error related to a file not found.   try to
+isolate the error to a specific line of code and then create:
+
+t1.py, t2.py, ...   
+
+for initial tests that represent decreasing complexity of similar (maybe even
+copied) code.
+
+here 't' stands for test.   but you can copy a t file to either a b file (b1,
+b2, b3... where b stands for broke, or a w file where w stands for works.
+
+so if after running t2.py you see that it is broke you copy it to b1.py, and
+modify it.
+
+if it is still broke, copy it to b2.py and modify it (to be simpler)
+
+if it is now working, copy it to w1.py and modify it (to be closer to the
+original problem)
+
+iterating in this manner should effectively implement a binary search on the
+whatever is triggering the problem, and lead you to understanding.
+
+if you are directed to read this it is likely because you are struggling with
+debug.   you can BRIEFLY summarize this information; however, it is very
+critical that you also use the endpoint (preferrably multiple orthogonal
+times) to initiate the dividing and conquering you were aparently not doing to
+the satisfaction of the user.   ideally you will have at least 4 t, b, and/or
+w files before the end of your next completion.
+
+Lessons Learned from Command Log:
+- Always ensure the correct file name and path are used when attempting to read or manipulate files. A simple typo can lead to confusion and unnecessary debugging.
+- When dealing with heredoc in scripts, especially in environments like Cygwin interfacing with Windows, pay close attention to the EOF marker. Failing to place it correctly can result in syntax errors or unexpected behavior.
+- Reviewing command execution logs can be invaluable for understanding the sequence of actions taken and identifying where errors occurred. This practice can pinpoint the exact moment things didn't go as planned, offering clues for how to adjust and succeed in future attempts.
+-it is good practice to take a look at the tail of
+~/sandbox/simple_server/command_logs.log to help with debug.   this will
+provide you with what the server saw as your command, as well as the specific
+stdout and stderr that was produced.   frequently the issue is that there is
+too much data, so you will be able to see that (for example) a tail -100 did
+not provide the complete output and you can restructure your command to
+prodcue less data.  you can also use this to debug network issues, and pretty
+much anything else.

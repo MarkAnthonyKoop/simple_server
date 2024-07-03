@@ -1,0 +1,3 @@
+shopt -s expand_aliases
+source /c/z/personal/.bashrc.aliases
+p server.py 
